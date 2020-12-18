@@ -1,5 +1,8 @@
 sudo: false
 language: node_js
+arch:
+  - amd64
+  - ppc64le
 before_install:
   - npm install -g npm@2
   - test $NPM_LEGACY && npm install -g npm@latest-3 || npm install npm -g
@@ -8,35 +11,31 @@ notifications:
 matrix:
   fast_finish: true
   include:
-  - node_js: '0.8'
+  - node_js: '8'
     env:
       - TASK=test
       - NPM_LEGACY=true
-  - node_js: '0.10'
+  - node_js: '10'
     env:
       - TASK=test
       - NPM_LEGACY=true
-  - node_js: '0.11'
+  - node_js: '12'
     env:
       - TASK=test
       - NPM_LEGACY=true
-  - node_js: '0.12'
+  - node_js: 11
     env:
       - TASK=test
       - NPM_LEGACY=true
-  - node_js: 1
+  - node_js: 12
     env:
       - TASK=test
       - NPM_LEGACY=true
-  - node_js: 2
+  - node_js: 13
     env:
       - TASK=test
       - NPM_LEGACY=true
-  - node_js: 3
-    env:
-      - TASK=test
-      - NPM_LEGACY=true
-  - node_js: 4
+  - node_js: 14
     env:
       - TASK=test
       - NPM_LEGACY=true
